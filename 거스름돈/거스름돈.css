@@ -1,0 +1,94 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #cad2c5;
+}
+
+
+
+h1{
+  color: #354f52;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+input{
+  border: none;
+}
+input:focus{
+  outline: none;
+}
+
+#money{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 7px;
+}
+#go{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #84a98c;
+
+  transition: 300ms ease background-color;
+}
+#go:active{
+  background-color: #52796f;
+  
+  
+}
+
+
+#newMoney{
+  height: 60px;
+  width: 275px;
+  margin-right: 10px;
+  padding: 13px;
+  font-size: 20px;
+  border-radius: 10px;
+  transition: 50ms ease border;
+}
+#newMoney:active{
+  border: 2px solid #84a98c;
+}
+
+
+table {
+  font-size: 20px;
+  color: #354f52;
+}
+
+.title{
+  width: 100px;
+  font-weight: bold;
+  text-align: right;
+  padding: 12px;
+  background-color: #84a98c;
+  border-radius: 10px 0 0 10px;
+  border-bottom: 0px;
+}
+
+td {
+  width: 240px;
+  height: 50px;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0px
+  
+}
+
+tr .space{
+  padding: 10px 0;
+  border:none;
+}
