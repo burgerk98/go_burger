@@ -1,8 +1,8 @@
-// var container = document.getElementById("container")
-// var go = document.getElementById("go")
-// var newM = document.getElementById("newMoney")
+//전체적으로 이름을 신경써서 지어주는것이 좋다.
+
 var fiveT, oneT, fiveH, oneH;
-var money = document.getElementById("money")
+//머니보다는 머니 form으로 적어주기.
+var form = document.getElementById("form")
 var fT = document.getElementById("fT")
 var oT = document.getElementById("oT")
 var fH = document.getElementById("fH")
@@ -10,18 +10,28 @@ var oH = document.getElementById("oH")
 var left = document.getElementById("left")
 
 
-money.addEventListener("submit", function (event) {
+
+form.addEventListener("submit", function (event) {
   
+  //문자로 받아오기때문에 숫자로 받아오기.(parseInt)
+  var newM = parseInt(event.target.newMoney.value)
   
-  var newM = event.target.newMoney.value
-  
+  //밑의 if문의 조건은 1000이상 100미만의 값이 딱 정해지므로
+  //문자를 받았을 때 띄울 alert문은 따로 if문을 만드는것이 좋다.
+  if(!newM || isNaN(newM)){
+    
+    alert("금액을 입력해주세요!")
+    return
+  }
+
   if (newM <= 100) {
     alert("100원보다 큰 금액을 입력해주세요!")
     return
   }
-  else if (100 < newM) {
+  //if와 반대되는 상황이기때문에 else로 표현해주는것이 좋음
+  else{
     event.preventDefault()
-    //change함수를 바로 밖에서 선언해야하는 이유는 무엇인가요...?ㅠ
+    
     change();
     function change() {
 
@@ -44,10 +54,7 @@ money.addEventListener("submit", function (event) {
       left.innerHTML = `${newM}원`
     }
   }
-  else {
-    
-    alert("금액을 입력해주세요!")
-    return
-  }
+  
+  
 })
 
